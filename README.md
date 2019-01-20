@@ -1,4 +1,5 @@
-# fib
+# fib 
+[![Build Status](https://travis-ci.com/leopepe/fib-rs.svg?branch=master)](https://travis-ci.com/leopepe/fib-rs)
 
 A try-out using Rust to calculate the Fibonacci sum using three methods: Imperative, Recursiveness and Iterator.
 
