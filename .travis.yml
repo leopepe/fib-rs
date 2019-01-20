@@ -1,0 +1,12 @@
+language: rust
+rust:
+  - 1.28.0
+  - 1.32.0
+script:
+  - cargo build --verbose --release
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  skip_cleanup: true
+  on:
+    tags: true
