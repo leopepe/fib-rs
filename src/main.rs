@@ -1,17 +1,8 @@
-extern crate rayon;
-extern crate num_cpus;
-
 use std::env;
 
 mod recursive;
 mod iterator;
 mod imperative;
-
-fn pooler() -> rayon::ThreadPool {
-    let cpus = num_cpus::get();
-    let pool = rayon::ThreadPoolBuilder::new().num_threads(cpus).build().unwrap();
-    return pool
-}
 
 fn help() {
     println!("[HELP] You need to provide the calculation mode and the number to calculate the Fibonacci sum", );
@@ -36,9 +27,9 @@ fn main() {
                     println!("The sum of Fibonnacci numbers of {} is {}", number, iterator::fib(number as usize));
                 },
                 "recursive" => {
-                    let pool = pooler();
-                    let _n = pool.install(|| recursive::fib(number));
-                    println!("The sum of Fibonnacci numbers of {} is {}", number, _n);
+                    // let pool = pooler();
+                    // let _n = pool.install(|| recursive::fib(number));
+                    println!("The sum of Fibonnacci numbers of {} is {}", number, recursive::fib(number));
                 },
                 _ => help(),
             }
