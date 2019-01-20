@@ -1,0 +1,8 @@
+[package]
+name = "fib"
+version = "0.1.0"
+authors = ["Leonardo Pepe <lpepefreitas@gmail.com>"]
+
+[dependencies]
+rayon = "1.0.3"
+num_cpus = "0.2"
